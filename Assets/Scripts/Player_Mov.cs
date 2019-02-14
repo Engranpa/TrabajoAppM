@@ -39,7 +39,7 @@ public class Player_Mov :  NetworkBehaviour{
             this.transform.Rotate(Vector3.up * Time.deltaTime * 60f);
         }
         else {
-            return;
+            
         }
         var x = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 3.0f;
         var z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 3.0f;
