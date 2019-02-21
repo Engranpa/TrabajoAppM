@@ -640,9 +640,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 95cb7cbd-8039-4e67-ac31-16bcb4874aa0
-  projectName: tp2
-  organizationId: engranpa
+  cloudProjectId: 
+  projectName: Template_3D
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
