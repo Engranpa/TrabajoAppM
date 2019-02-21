@@ -1,9 +1,12 @@
 fileFormatVersion: 2
 guid: b9f4156714ffb434ca04359bf86a8c82
+timeCreated: 1550168372
+licenseType: Free
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - babapref: {fileID: 1419828839868948, guid: 0c4daa018f49e594fb443f2b3dc73337, type: 2}
+  - balaspawn: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -8,14 +8,16 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Player_Mov :  NetworkBehaviour{
     public GameObject babapref;
     public Transform balaspawn;
-
+    public Vector3 Mforward = new Vector3(0, 0, 30);
+    public Vector3 pos = new Vector3(0f, 5f, -5f);
 
     void Start(){
         if (isLocalPlayer){
-            //Camera.main.transform.position = this.transform.position - this.transform.forward * 10 + this.transform.up * 3;
-           
-            Camera.main.transform.LookAt(this.transform.position);
+            Camera.main.transform.position = this.transform.position - this.transform.forward * 8 + this.transform.up * 3;
             Camera.main.transform.parent = this.transform;
+          Camera.main.transform.LookAt(this.transform.position);
+      
+            
             
         }     
     }
@@ -50,22 +52,26 @@ public class Player_Mov :  NetworkBehaviour{
 
         if (CrossPlatformInputManager.GetButtonDown("Fire")){
             CmdFire();
-          //Shoot();
+            FindObjectOfType<AudioManager>().Play("9mm");
+            Debug.Log("disparo");
         }
     
        
     }
-    
+
 
     [Command]
-    void CmdFire(){
-        var bullet = (GameObject)Instantiate( babapref, balaspawn.position, GetComponentInChildren<Camera>().transform.rotation);
+    void CmdFire()
+    {
+        var bullet = (GameObject)Instantiate(babapref, balaspawn.position, GetComponentInChildren<Camera>().transform.rotation);
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
 
         NetworkServer.Spawn(bullet);
 
         Destroy(bullet, 3.0f);
+
+
     }
 
 

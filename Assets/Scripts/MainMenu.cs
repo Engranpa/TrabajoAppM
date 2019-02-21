@@ -9,7 +9,13 @@ public class MainMenu : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-    }  
+    }
+
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        SceneManager.UnloadSceneAsync(1);
+    }
     public void QuitGame()
     {
         Debug.Log("quit");
